@@ -1,2 +1,74 @@
-# grad_research_program
-ProtoMF_with_music_featureを実行するためのプログラム
+# ProtoMF with Music Features
+
+このリポジトリは、ProtoMFモデルに音源特徴量を加えた音楽推薦システムを構築するためのコードとツールを提供します。また、Last.fmデータセットの前処理および音源特徴量の抽出・結合を行う機能も備えています。
+
+---
+
+## 📂 リポジトリ構成
+```bash
+.
+├── README.md
+├── data_preprocessing
+│   └── CLMR_Lastfm.ipynb
+└── main
+    └── ProtoMF_github.ipynb
+```
+
+### **main フォルダ**
+- **`ProtoMF_github.ipynb`**  
+  ProtoMFモデルに音源特徴量を加えたモデルで音楽推薦を実行できます。  
+  **主な機能**：
+  - 音源特徴量を考慮したProtoMFの音楽推薦モデルのトレーニングおよび評価。
+  - ProtoMFの説明可能性を活用したユーザおよびアイテムのプロトタイプ解析。
+
+### **data_preprocessing フォルダ**
+- **`CLMR_Lastfm.ipynb`**  
+  Last.fmデータセットの前処理を行うノートブックです。以下の処理が可能です：  
+  1. **Spotify API を用いた音源ファイルの取得**  
+     - データセット内の楽曲に対応する音源ファイルをSpotifyから取得します。
+  2. **音源ファイルパスの保存**  
+     - 取得した音源ファイルのパスをデータセットに保存します。
+  3. **CLMR（Contrastive Learning of Musical Representations）による音源特徴量の抽出**  
+     - 音源ファイルから特徴量を抽出し、データセットに統合します。
+  4. **大規模データ対応**  
+     - データセットが非常に大きいため、途中結果を逐次保存できる仕組みを実装しています。
+
+---
+
+## 🚀 使用方法
+
+### 環境の準備
+以下を事前にインストールしてください：
+- Python 3.8 以上
+- 必要なライブラリ（`requirements.txt` からインストール可能）
+
+```bash
+pip install -r requirements.txt
+```
+
+### 音源特徴量を含む音楽推薦モデルの実行
+1. `main`フォルダに移動します。
+2. `ProtoMF_github.ipynb` を開き、セルを順に実行します。
+3. データセットと音源特徴量を利用した音楽推薦システムを構築できます。
+
+### データセットの前処理と音源特徴量の抽出
+1. `data_preprocessing`フォルダに移動します。
+2. `CLMR_Lastfm.ipynb` を開き、セルを順に実行します。
+   - Spotify APIの認証情報が必要です。APIキーを取得し、ノートブック内に設定してください。
+3. 前処理結果は逐次保存されるため、処理が中断しても再開可能です。
+
+---
+
+## ⚠️ 注意事項
+- **Spotify API** の使用には認証情報が必要です。APIキーの取得方法は[Spotify for Developers](https://developer.spotify.com/)を参照してください。
+- データセットサイズが非常に大きいため、処理には時間とディスク容量が必要です。
+
+---
+
+## 📜 ライセンス
+このリポジトリはApache 2.0ライセンスの下で提供されています。詳細は[LICENSE](LICENSE)ファイルをご覧ください。
+
+---
+
+## 🙌 謝辞
+この研究は、ProtoMFモデルおよびCLMRの開発者コミュニティに感謝します。
