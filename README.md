@@ -14,14 +14,14 @@
     └── ProtoMF_github.ipynb
 ```
 
-### **main フォルダ**
+### **main**
 - **`ProtoMF_github.ipynb`**  
   ProtoMFモデルに音源特徴量を加えたモデルで音楽推薦を実行できます。  
   **主な機能**：
   - 音源特徴量を考慮したProtoMFの音楽推薦モデルのトレーニングおよび評価。
   - ProtoMFの説明可能性を活用したユーザおよびアイテムのプロトタイプ解析。
 
-### **data_preprocessing フォルダ**
+### **data_preprocessing**
 - **`CLMR_Lastfm.ipynb`**  
   Last.fmデータセットの前処理を行うノートブックです。以下の処理が可能です：  
   1. **Spotify API を用いた音源ファイルの取得**  
